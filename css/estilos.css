@@ -1,0 +1,47 @@
+/*O CSS por padrão já traz alguns estilos aplicados, então utiliza-se um reset, depois pesquisar reset CSS e utilizar o do Eric, isso futuramente*/
+* {/*reset CSS*/
+    margi: 0;/*tiro todas as margens*/
+    padding: 0;
+    box-sizing: border-box;/*no inspecionador com o border-box a margem será considerada a partir da segunda e não da primeira*/
+  }
+  
+  body{
+       background-image: url('../img/fundo.jpg');
+       font-family: arial black;
+       heigth: 100vh; /*garante que a altura do body seja sempre a mesma*/
+     }
+     
+    .menu{
+       background-color: white;
+     }
+     
+     .menu li {
+       list-style: none;
+     }
+     
+     .menu ul{
+       display: flex;
+       justify-content: space-around;
+     }
+         
+     a {
+       color: teal;
+       text-decoration: none;
+       }
+     
+     a:hover {
+       text-decoration: underline;
+       color: blue;
+     }
+     
+     .site-subtitulo, 
+     .site-titulo {
+       color: whitesmoke;
+       text-align: center;
+     }
+     
+     .site-subtitulo {
+       font-style: italic;
+     }
+  
+  
