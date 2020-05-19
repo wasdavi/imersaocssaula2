@@ -1,18 +1,54 @@
 /*O CSS por padrão já traz alguns estilos aplicados, então utiliza-se um reset, depois pesquisar reset CSS e utilizar o do Eric, isso futuramente*/
 * {/*reset CSS*/
-    margi: 0;/*tiro todas as margens*/
+    margin: 0;/*tiro todas as margens*/
     padding: 0;
-    box-sizing: border-box;/*no inspecionador com o border-box a margem será considerada a partir da segunda e não da primeira*/
+    box-sizing: border-box;
   }
   
   body{
-       background-image: url('../img/fundo.jpg');
+       background-image: url('../img/fundo.jpg'); /*Só 1 ponto estaria dentro da pasta CSS*/
        font-family: arial black;
-       heigth: 100vh; /*garante que a altura do body seja sempre a mesma*/
+       height: 100vh; 
+       font-size: 12px;
+     }
+
+     /*Essa anotação funciona como um IF*/
+     /*dentro do parenteses irei por o tamanho mínimo necessário da tela para que carregue os estilos que vou passar*/
+     @media (min-width: 400px){/*se a tela tiver tiver 400px a 599px vai carregar estes estilos*/
+      body{
+        font-size: 14px;
+        color: violet;
+      }
+     }
+
+     @media (min-width: 600px){/*se a tela tiver tiver 600px ou mais vai carregar estes estilos*/
+      body{
+        font-size: 20px;
+      }
+     }
+
+     /*a MEDIA é conhecida como BREAKPOINT*/
+     @media (min-width: 1200px){/*se a tela tiver tiver 600px ou mais vai carregar estes estilos*/
+      body{
+        font-size: 22px;
+        background-image: none;/*tiro a imagem, se não irá sobrescrever a cor de fundo*/
+        background-color: deeppink;
+      }
+     }
+
+     header{
+       height: 50vh;/*deixa o header na tela inteira, 100%, e deixa o portifolio na outra metade*/
+       display: flex;/*centraliza verticalmente os elementos*/
+       justify-content: center;/*o position tirou a centralização, então centralizo verticalmente de novo*/
+       align-items: center;/*usado para alinhar verticalmente ao 100% do header*/
+       /*o JUSTIFY e o ALING só funcionam por causa do flex*/
      }
      
     .menu{
        background-color: white;
+       position: fixed;/*faz com que o menu acompanhe a barra de rolagem, põe o menu no eixo z, 3d, passando por cima dos eixos X e Y*/
+       width: 100vw;/*100% horizontal uso o W e não o H*/
+       top: 0;/*Colar o menu no topo da tela. Só funciona se o POSITION estiver declarado*/
      }
      
      .menu li {
@@ -22,6 +58,12 @@
      .menu ul{
        display: flex;
        justify-content: space-around;
+     }
+
+     .menu a{
+       /*background-color: rgb(171, 245, 245); /*usei este código só para debugar, ou seja, achar o tamanho da área de clique*/
+       display: block; /*sem o BLOCK quando eu aplicasse o PADDING a área de clique ficaria fora da área de fundo*/  
+       padding: 20px;  
      }
          
      a {
@@ -38,10 +80,20 @@
      .site-titulo {
        color: whitesmoke;
        text-align: center;
+       /*font-size: 12px;se eu definir um valor estático como o tamanho e a cor da fonte a ANOTAÇÃO não mudará este estilo*/
+     }
+
+     .site-titulo{
+       font-size: 4em;/*então em vez de usar tamanhos estáticos usamos relativos neste caso será 4x o tamanho do BODY*/
      }
      
      .site-subtitulo {
        font-style: italic;
+     }
+
+     .img-portfolio{
+       height: 180px;
+       width: 180px;
      }
   
   
